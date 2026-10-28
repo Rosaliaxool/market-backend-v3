@@ -1,12 +1,10 @@
 package com.merida.tecnm.market_backend_v3.domain;
 
-import jdk.jfr.Category;
-
 public class Product {
 
     private Integer productId;
     private String name;
-    private int categoryId;
+    private Integer categoryId;
     private double price;
     private int stock;
     private boolean active;

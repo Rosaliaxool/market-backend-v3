@@ -1,32 +1,16 @@
 package com.merida.tecnm.market_backend_v3.domain;
 
 public class Category {
-
-    private int categoryid;
-    private String category;
+    private int categoryId;      // no "categoryid"
+    private String description;
     private boolean active;
 
-    public int getCategoryid() {
-        return categoryid;
-    }
+    public int getCategoryId() { return categoryId; }
+    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
 
-    public void setCategoryid(int categoryid) {
-        this.categoryid = categoryid;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
 }

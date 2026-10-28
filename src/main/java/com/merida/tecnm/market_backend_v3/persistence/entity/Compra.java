@@ -31,7 +31,7 @@ private String estado;
     private Cliente cliente;
 
     //relacion con compra de producto
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<CompraProducto> productos;
 
     public Integer getIdcompra() {
