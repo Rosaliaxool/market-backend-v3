@@ -17,13 +17,13 @@ public class Producto {
     @Column (name ="id_categoria")
     private Integer idCategoria;
 
-    @Column(name ="codigo barras")
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column (name ="precio venta")
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column(name ="cantidad stock")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;

@@ -6,11 +6,15 @@ import java.util.List;
 public class Purchase {
 
     private Integer purchaseId;
+    @com.fasterxml.jackson.annotation.JsonAlias({"idCliente", "clientId"})
     private String clientId;
-    private LocalDateTime date;
+    private java.time.LocalDateTime date;
+    @com.fasterxml.jackson.annotation.JsonAlias({"medioPago", "paymentMethod"})
     private String paymentMethod;
+    @com.fasterxml.jackson.annotation.JsonAlias({"comentario", "comment"})
     private String comment;
     private String state;
+    @com.fasterxml.jackson.annotation.JsonAlias({"productosAdquiridos", "items"})
     private List<PurchaseItem> items;
 
     public Integer getPurchaseId() {

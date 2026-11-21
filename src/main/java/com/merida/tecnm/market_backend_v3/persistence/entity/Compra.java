@@ -11,7 +11,7 @@ public class Compra{
 
 @Id
 @GeneratedValue(strategy= GenerationType.IDENTITY)
-@Column (name ="id.dcompra")
+@Column (name ="id_compra")
 private Integer idcompra;
 
 @Column (name ="id_cliente")
@@ -19,7 +19,7 @@ private String idCliente;
 
 private LocalDateTime fecha;
 
-@Column (name ="medio pago")
+@Column (name ="medio_pago")
 private String medioPago;
 
 private String comentario;

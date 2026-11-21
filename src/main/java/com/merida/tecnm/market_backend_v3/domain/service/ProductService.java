@@ -11,7 +11,11 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public List<Product> getAll(){
         return productRepository.getAll();
@@ -26,6 +30,13 @@ public class ProductService {
 
     public Product save (Product product){
         return productRepository.save(product);
+    }
+
+    public Optional<Product> update(int productId, Product product) {
+        return getProduct(productId).map(existing -> {
+            product.setProductId(productId);
+            return productRepository.save(product);
+        });
     }
 
     public boolean delete(int productId){

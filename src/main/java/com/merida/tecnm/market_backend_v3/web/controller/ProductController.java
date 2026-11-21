@@ -127,6 +127,50 @@ public class ProductController {
         );
     }
 
+    @PutMapping("/{id}")
+    @Operation(
+            summary = "Update an existing product",
+            description = "Update product data by its ID and return the updated product",
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    required = true,
+                    content = @Content(
+                            examples = @ExampleObject(
+                                    name = "Example Updated Product",
+                                    value = """
+                                            {
+                                                "name": "Helado Artesanal",
+                                                "categoryId": 5,
+                                                "price": 25.00,
+                                                "stock": 150,
+                                                "active": true
+                                            }
+                                            """
+                            )
+                    )
+            )
+    )
+    @ApiResponse(responseCode = "200",
+            description = "Product updated successfully")
+    @ApiResponse(responseCode = "400",
+            description = "Invalid product data")
+    @ApiResponse(responseCode = "404",
+            description = "Product not found")
+    @ApiResponse(responseCode = "500",
+            description = "Internal server error")
+    public ResponseEntity<Product> update(
+            @Parameter(
+                    description = "ID of the product to update",
+                    example = "7",
+                    required = true
+            )
+            @PathVariable("id") int productId,
+            @RequestBody Product product) {
+
+        return productService.update(productId, product)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Delete a product by ID",

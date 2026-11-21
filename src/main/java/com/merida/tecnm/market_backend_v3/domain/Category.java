@@ -1,12 +1,12 @@
 package com.merida.tecnm.market_backend_v3.domain;
 
 public class Category {
-    private int categoryId;      // no "categoryid"
+    private Integer categoryId;      // Integer en vez de int primitivo para admitir null en creación
     private String description;
     private boolean active;
 
-    public int getCategoryId() { return categoryId; }
-    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
+    public Integer getCategoryId() { return categoryId; }
+    public void setCategoryId(Integer categoryId) { this.categoryId = categoryId; }
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
